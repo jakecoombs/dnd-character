@@ -3,6 +3,14 @@ from src.race import Race
 
 BREAK = "-----"
 
+ABILITIES = [
+    "Strength",
+    "Dexterity",
+    "Constitution",
+    "Intelligence",
+    "Wisdom",
+    "Charisma",
+]
 RACES = [
     Race(
         name="Dragonborn",
