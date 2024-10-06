@@ -1,28 +1,26 @@
 from typing import TypeVar
 
+import click
+
 T = TypeVar("T")
 
 
 def select_option(prompt: str, options: list[T]) -> T:
     # List options and return index of choice
-    print(prompt)
+    click.echo(prompt)
 
     for i, option in enumerate(options):
-        print(f"{i + 1}. {option}")
+        click.echo(f"{i + 1}. {option}")
 
-    index = int_input("Enter number choice:")
+    index = int_input("Enter number choice") - 1
     choice = options[index]
-    print(f"You have chosen: {choice}")
+    click.echo(f"You have chosen: {choice}")
     return choice
 
 
 def str_input(prompt: str) -> str:
-    # TODO: Implement
-    print(prompt)
-    return "Test Str"
+    return click.prompt(prompt)
 
 
 def int_input(prompt: str) -> int:
-    # TODO: Implement
-    print(prompt)
-    return 0
+    return click.prompt(prompt, type=int)

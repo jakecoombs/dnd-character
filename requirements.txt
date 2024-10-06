@@ -1,1 +1,3 @@
+click
+pyright
 ruff
